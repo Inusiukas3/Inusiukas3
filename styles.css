@@ -1,0 +1,163 @@
+:root {
+  --cream: #faf6f2;
+  --blush: #f1e2db;
+  --rose: #b76e5d;
+  --rose-dark: #94523f;
+  --ink: #2e2624;
+  --muted: #6f6360;
+  --line: #e6d8d0;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Jost", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--cream);
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 2.8rem); }
+h3 { font-size: 1.5rem; }
+a { color: var(--rose-dark); }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--rose);
+  margin: 0 0 .6em;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--rose);
+  color: #fff;
+  border: 1px solid var(--rose);
+  padding: .85em 1.7em;
+  border-radius: 999px;
+  text-decoration: none;
+  font: 500 .95rem var(--sans);
+  letter-spacing: .03em;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.btn:hover { background: var(--rose-dark); border-color: var(--rose-dark); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn-small { padding: .5em 1.2em; font-size: .85rem; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(250, 246, 242, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+.menu { display: flex; align-items: center; gap: 28px; }
+.menu a:not(.btn) { color: var(--ink); text-decoration: none; font-size: .95rem; }
+.menu a:not(.btn):hover { color: var(--rose); }
+.menu .btn { color: #fff; }
+.menu-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.menu-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; }
+
+/* Hero */
+.hero {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(183, 110, 93, .22), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(183, 110, 93, .14), transparent 40%),
+    var(--blush);
+  padding: 120px 0 130px;
+}
+.hero-inner { max-width: 760px; margin-left: max(20px, calc((100% - 1100px) / 2 + 20px)); }
+.lead { font-size: 1.2rem; color: var(--muted); max-width: 32em; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+/* Sections */
+.section { padding: 96px 0; }
+.section-tint { background: #fff; }
+.section-dark { background: var(--ink); color: #f3ebe7; }
+.section-dark .eyebrow { color: #e0a99a; }
+.section-dark a { color: #f3ebe7; }
+
+/* Services */
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin-top: 36px; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 30px 26px; }
+.price-list { list-style: none; margin: 0; padding: 0; }
+.price-list li {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: .95rem;
+}
+.price-list li:last-child { border-bottom: 0; }
+.price-list li span:last-child { font-weight: 500; color: var(--rose-dark); white-space: nowrap; }
+.note { color: var(--muted); font-size: .9rem; margin-top: 26px; }
+
+/* About */
+.about { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+.about-visual {
+  aspect-ratio: 4 / 5;
+  border-radius: 200px 200px 18px 18px;
+  background: linear-gradient(160deg, #e8cbbf, #b76e5d);
+}
+.badges { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.badges li { background: var(--blush); border-radius: 999px; padding: 6px 16px; font-size: .88rem; }
+
+/* Reviews */
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; margin-top: 36px; }
+.review { margin: 0; background: var(--blush); border-radius: 18px; padding: 30px; }
+.review p { font-family: var(--serif); font-size: 1.35rem; line-height: 1.4; margin: 0 0 14px; }
+.review cite { font-style: normal; font-size: .9rem; color: var(--muted); }
+
+/* Booking */
+.book { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contact-lines { font-size: 1.15rem; line-height: 2; }
+.book-form { display: grid; gap: 16px; }
+.book-form label { display: grid; gap: 6px; font-size: .9rem; }
+.book-form input, .book-form select, .book-form textarea {
+  font: inherit; font-size: 1rem;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #5a4d49;
+  background: #3a312e;
+  color: #fff;
+}
+.book-form input:focus, .book-form select:focus, .book-form textarea:focus { outline: 2px solid #e0a99a; outline-offset: 1px; }
+.book-form .btn { justify-self: start; }
+
+/* Visit */
+.visit { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+address { font-style: normal; font-size: 1.1rem; }
+.hours { border-collapse: collapse; width: 100%; }
+.hours td { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); padding: 30px 0; text-align: center; font-size: .9rem; color: var(--muted); }
+
+/* Mobile */
+@media (max-width: 800px) {
+  .menu-toggle { display: block; }
+  .menu {
+    display: none;
+    position: absolute; top: 68px; left: 0; right: 0;
+    flex-direction: column; gap: 18px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding: 24px 20px 30px;
+  }
+  .menu.open { display: flex; }
+  .hero { padding: 80px 0 90px; }
+  .section { padding: 70px 0; }
+  .about, .book, .visit { grid-template-columns: 1fr; gap: 36px; }
+  .about-visual { max-width: 320px; }
+}
