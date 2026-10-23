@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Body Shape Hampton</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Lymphatic massage, OPI manicures and pedicures, facials and aesthetics at 9 Station Approach, Hampton TW12 2HY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Caveat:wght@500&display=swap">
+<style>
+/* Layout: dark name band, then a two-column price list (category label left, treatments right) on soft sage-grey. Single light look, by choice. */
+:root {
+  --band: #2a2f31;
+  --band-ink: #f4f5f2;
+  --lime: #dfe57f;
+  --page: #eceeeb;
+  --ink: #23282a;
+  --muted: #5c6462;
+  --line: #cdd2ce;
+  --green: #3f5a40;
+  --green-ink: #ffffff;
+  --leaf: #b9c6b1;
+  --deal: #8fa23e;
+  --sans: "Jost", "Futura", "Avenir Next", system-ui, sans-serif;
+  --script: "Caveat", "Segoe Script", cursive;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--page); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.55; font-weight: 400; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+
+.wrap { max-width: 1000px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Name band */
+.band { background: var(--band); color: var(--band-ink); text-align: center; }
+.band .wrap { padding-block: 28px 34px; display: grid; gap: 10px; }
+.eyebrow { margin: 0; color: var(--lime); font-size: 12px; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; }
+.logo { margin: 0; font-size: clamp(40px, 9vw, 76px); line-height: 1; font-weight: 300; letter-spacing: .06em; }
+.logo b { color: var(--lime); font-weight: 600; }
+.tagline { margin: 0; font-size: 12px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; }
+
+/* Intro */
+.intro .wrap { padding-block: 40px 28px; display: grid; grid-template-columns: minmax(0, 1fr) 160px; gap: 24px; align-items: center; }
+.intro-text { min-width: 0; display: grid; gap: 16px; justify-items: start; }
+.script { margin: 0; font-family: var(--script); font-size: 30px; line-height: 1.1; font-weight: 500; }
+.lede { margin: 0; max-width: 34em; font-size: 17px; }
+.ratings { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.ratings li { border: 1px solid var(--line); background: #f6f7f5; border-radius: 999px; padding: 4px 14px; font-size: 13px; color: var(--muted); }
+.ratings b { color: var(--ink); font-weight: 600; margin-right: 4px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-block; padding: 12px 22px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--ink); background: transparent; color: var(--ink); font-family: inherit; cursor: pointer; border-radius: 2px; }
+.btn.primary { background: var(--green); border-color: var(--green); color: var(--green-ink); }
+.btn:hover { filter: brightness(1.08); }
+.btn.small { padding: 7px 12px; font-size: 11px; }
+.status { margin: 0; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.status.open::before { background: #4f8a4f; }
+.leaf { width: 100%; max-width: 160px; justify-self: end; }
+
+/* Category chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.chips a { text-decoration: none; border: 1px solid var(--line); background: #f6f7f5; padding: 6px 12px; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); border-radius: 2px; }
+.chips a:hover { border-color: var(--ink); color: var(--ink); }
+
+/* Menu */
+.cat { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 32px; padding-block: 32px; border-bottom: 1px solid var(--line); scroll-margin-top: 16px; }
+.cat-head h2 { margin: 0; font-size: 19px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; text-wrap: balance; line-height: 1.35; }
+.cat-head h2::after { content: ""; display: block; width: 48px; height: 1px; background: var(--muted); margin-top: 12px; }
+.cat-head p { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+.cat-items { min-width: 0; }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; padding-block: 16px; border-bottom: 1px solid var(--line); }
+.item:first-child { padding-top: 0; }
+.item:last-child { border-bottom: 0; padding-bottom: 0; }
+.item-main { min-width: 0; display: grid; gap: 6px; justify-items: start; }
+.item h3 { margin: 0; font-size: 17px; font-weight: 500; line-height: 1.35; }
+.desc { margin: 0; color: var(--muted); font-size: 15px; max-width: 36em; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 0; padding: 0; list-style: none; }
+.tags li { border: 1px solid var(--muted); padding: 2px 8px; font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.tags li.deal { background: var(--deal); border-color: var(--deal); color: #fff; }
+.options { margin: 6px 0 0; width: 100%; max-width: 540px; font-size: 14px; color: var(--muted); }
+.options div { display: flex; justify-content: space-between; gap: 16px; padding-block: 8px; border-top: 1px solid var(--line); }
+.options dt { min-width: 0; }
+.options dd { margin: 0; font-variant-numeric: tabular-nums; }
+.price { text-align: right; font-size: 22px; font-weight: 500; color: var(--green); white-space: nowrap; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.price small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; }
+
+/* Reviews */
+.reviews { padding-block: 44px 8px; }
+.kicker { margin: 0; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+.reviews h2 { margin: 6px 0 18px; font-size: 20px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; text-wrap: balance; }
+.quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.quotes figure { margin: 0; background: #f6f7f5; border: 1px solid var(--line); padding: 20px; display: grid; gap: 14px; align-content: space-between; }
+.quotes blockquote { margin: 0; font-size: 16px; }
+.quotes figcaption { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+
+/* Hours + find us */
+.visit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; padding-block: 40px 56px; }
+.visit h2 { margin: 0 0 12px; font-size: 18px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; }
+.hours { width: 100%; border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; }
+.hours td { padding: 9px 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; }
+.hours tr.today td { font-weight: 600; }
+.small-note { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+address { font-style: normal; font-size: 16px; line-height: 1.6; }
+.phone-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 14px 0; }
+.phone { font-size: 26px; font-weight: 500; letter-spacing: .02em; font-variant-numeric: tabular-nums; user-select: all; }
+
+footer { background: var(--band); color: var(--band-ink); font-size: 13px; }
+footer .wrap { padding-block: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+@media (max-width: 760px) {
+  .intro .wrap { grid-template-columns: minmax(0, 1fr); }
+  .leaf { display: none; }
+  .cat { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .quotes, .visit { grid-template-columns: minmax(0, 1fr); }
+  .visit { gap: 36px; }
+  .price { font-size: 19px; }
+}
+</style>
+</head>
+<body>
+
+<header class="band">
+  <div class="wrap">
+    <p class="eyebrow">No. 9 · Station Approach</p>
+    <h1 class="logo">BODY <b>SHAPE</b></h1>
+    <p class="tagline">Beauty &amp; Aesthetics · Hampton</p>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <div class="intro-text">
+        <p class="script">Look good, feel good</p>
+        <p class="lede">Lymphatic massage, OPI manicures and pedicures, facials and aesthetics, in one salon at 9 Station Approach, Hampton.</p>
+        <ul class="ratings">
+          <li><b>4.9</b>Google · 71 reviews</li>
+          <li><b>4.9/5</b>Treatwell · 490 reviews</li>
+          <li><b>4.9/5</b>Facebook · 28 votes</li>
+        </ul>
+        <div class="actions">
+          <a class="btn primary" href="tel:+447450877888">Call 07450 877888</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Body+Shape+9+Station+Approach+Hampton+TW12+2HY" target="_blank" rel="noopener">Get directions</a>
+        </div>
+        <p class="status" id="status">Open Mon–Fri 9:30 am – 6:30 pm, Sat 9 am – 4 pm</p>
+      </div>
+      <svg class="leaf" viewBox="0 0 160 240" aria-hidden="true">
+        <path d="M78 236 C 80 170, 84 110, 112 20" fill="none" stroke="var(--muted)" stroke-width="1.6"/>
+        <g fill="var(--leaf)">
+          <ellipse cx="48" cy="72" rx="26" ry="11" transform="rotate(20 48 72)"/>
+          <ellipse cx="126" cy="96" rx="27" ry="12" transform="rotate(-35 126 96)"/>
+          <ellipse cx="38" cy="144" rx="28" ry="12" transform="rotate(10 38 144)"/>
+          <ellipse cx="122" cy="160" rx="28" ry="12" transform="rotate(-40 122 160)"/>
+        </g>
+        <g fill="none" stroke="var(--muted)" stroke-width="1.2">
+          <ellipse cx="128" cy="28" rx="22" ry="10" transform="rotate(-55 128 28)"/>
+          <ellipse cx="40" cy="198" rx="28" ry="11" transform="rotate(-12 40 198)"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <nav class="chips" aria-label="Treatment categories"><a href="#body">Body</a><a href="#manicures">Manicures</a><a href="#gel-manicures">Gel manicures</a><a href="#pedicures">Pedicures</a><a href="#gel-pedicures">Gel pedicures</a><a href="#men">Men</a><a href="#girls">Girls 6–12</a><a href="#hands-feet">Hands &amp; feet</a><a href="#extras">Extras</a><a href="#lashes">Lashes</a><a href="#facials">Facials</a><a href="#aesthetics">Aesthetics</a></nav>
+    <section class="cat" id="body"><header class="cat-head"><h2>Body &amp; Sculpt</h2><p>Roll Shape lymphatic sessions.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>Roll Shape Lymphatic Massage</h3><p class="desc">Our roll-led lymphatic session.</p><ul class="tags"><li>Drain &amp; sculpt</li><li>35 min</li></ul></div><div class="price">£20</div></article><article class="item"><div class="item-main"><h3>Three Session Lymphatic Package</h3><p class="desc">Three Roll Shape lymphatic sessions booked together.</p><ul class="tags"><li>Best value</li><li>3 × 35 min</li></ul></div><div class="price">£39</div></article></div></section>
+<section class="cat" id="manicures"><header class="cat-head"><h2>Manicures</h2><p>OPI polish.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>OPI Express Manicure</h3><p class="desc">A fast, immaculate shape and OPI polish, ideal between appointments.</p><ul class="tags"><li>Quick &amp; neat</li><li>20 min</li></ul></div><div class="price">£15</div></article><article class="item"><div class="item-main"><h3>OPI Spa Manicure</h3><p class="desc">The full OPI spa manicure: soak, cuticle care, exfoliation, hand massage and polish.</p><ul class="tags"><li>Condition &amp; shape</li><li>1 hr</li></ul></div><div class="price">£25</div></article><article class="item"><div class="item-main"><h3>OPI Luxury Spa Manicure with Paraffin Wax</h3><ul class="tags"><li>1 hr 30 min</li></ul></div><div class="price">£45</div></article></div></section>
+<section class="cat" id="gel-manicures"><header class="cat-head"><h2>Gel Manicures</h2><p>Long-wearing OPI gel colour.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>OPI Gel Spa Manicure</h3><ul class="tags"><li>1 hr 30 min – 1 hr 40 min</li></ul><dl class="options"><div><dt>Manicure · 1 hr</dt><dd>£38</dd></div><div><dt>Gel removal &amp; manicure · 1 hr 15 min</dt><dd>£45</dd></div></dl></div><div class="price">from £38</div></article><article class="item"><div class="item-main"><h3>OPI Gel Luxury Spa Manicure with Hand Mask</h3><dl class="options"><div><dt>Manicure · 1 hr 55 min</dt><dd>£39</dd></div><div><dt>Gel removal &amp; manicure · 1 hr 35 min</dt><dd>£48</dd></div></dl></div><div class="price">from £39</div></article><article class="item"><div class="item-main"><h3>OPI Gel Luxury Spa Manicure with Paraffin Wax Hand Mask</h3><p class="desc">The full spa manicure with a paraffin wax hand mask, finished with long-wearing OPI gel colour.</p><ul class="tags"><li>Long-wear luxury</li><li>1 hr 30 min</li></ul></div><div class="price">£50</div></article><article class="item"><div class="item-main"><h3>OPI Gel Polish — Hands</h3><ul class="tags"><li>45 min – 1 hr 20 min</li></ul></div><div class="price">from £30</div></article><article class="item"><div class="item-main"><h3>Gel Manicure</h3><ul class="tags"><li>1 hr 30 min</li></ul></div><div class="price">£38</div></article><article class="item"><div class="item-main"><h3>Gel French Manicure</h3><ul class="tags"><li>1 hr 40 min</li></ul></div><div class="price">£42</div></article><article class="item"><div class="item-main"><h3>BIAB Manicure</h3><ul class="tags"><li>1 hr 45 min</li></ul></div><div class="price">£45</div></article></div></section>
+<section class="cat" id="pedicures"><header class="cat-head"><h2>Pedicures</h2><p>Spa, maintenance and foot-care treatments.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>OPI Spa Pedicure</h3><ul class="tags"><li>1 hr 30 min</li></ul></div><div class="price">£45</div></article><article class="item"><div class="item-main"><h3>OPI Spa Maintenance Pedicure</h3><ul class="tags"><li>1 hr 30 min</li></ul></div><div class="price">£45</div></article><article class="item"><div class="item-main"><h3>OPI LUX Pedicure with Callus Peel &amp; Paraffin Wax</h3><p class="desc">Our most complete pedicure: callus peel, paraffin wax, massage and a flawless OPI finish.</p><ul class="tags"><li>Immaculate feet</li><li>2 hr 15 min</li></ul></div><div class="price">from £75</div></article><article class="item"><div class="item-main"><h3>Ladies Pedicure with GEHWOL Products</h3><ul class="tags"><li>1 hr 30 min</li></ul></div><div class="price">£52</div></article><article class="item"><div class="item-main"><h3>Pedicure for Dry and Cracked Heel</h3><ul class="tags"><li>2 hr</li></ul></div><div class="price">£70</div></article><article class="item"><div class="item-main"><h3>Feet Condition Treatment with Paraffin</h3><ul class="tags"><li>2 hr</li></ul></div><div class="price">£75</div></article><article class="item"><div class="item-main"><h3>Normal Varnish on the Feet</h3></div><div class="price">£32</div></article><article class="item"><div class="item-main"><h3>File &amp; Polish — Toes</h3><ul class="tags"><li>40 min</li></ul><dl class="options"><div><dt>Also available · 40 min</dt><dd>£28</dd></div></dl></div><div class="price">£32</div></article><article class="item"><div class="item-main"><h3>Toe Nails Cut &amp; File (seniors only)</h3><dl class="options"><div><dt>Cut &amp; file · 30 min</dt><dd>£25</dd></div><div><dt>Cut, file &amp; remove cuticle · 40 min</dt><dd>£35</dd></div></dl></div><div class="price">from £25</div></article></div></section>
+<section class="cat" id="gel-pedicures"><header class="cat-head"><h2>Gel Pedicures</h2><p>OPI gel and long-wear finishes for feet.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>OPI LUX Gel Pedicure with Callus Peel</h3><ul class="tags"><li>1 hr 40 min – 1 hr 55 min</li></ul></div><div class="price">from £55</div></article><article class="item"><div class="item-main"><h3>OPI Spa Gel Pedicure</h3><ul class="tags"><li>1 hr 40 min – 1 hr 50 min</li></ul></div><div class="price">from £48</div></article><article class="item"><div class="item-main"><h3>OPI Gel Maintenance Pedicure by Body Shape (every 2–3 months)</h3><ul class="tags"><li>1 hr 30 min – 1 hr 45 min</li></ul></div><div class="price">from £48</div></article><article class="item"><div class="item-main"><h3>OPI Gel Polish — Feet</h3><ul class="tags"><li>50 min – 1 hr 25 min</li></ul></div><div class="price">from £38</div></article><article class="item"><div class="item-main"><h3>Gel Pedicure</h3><ul class="tags"><li>1 hr 40 min</li></ul></div><div class="price">£50</div></article><article class="item"><div class="item-main"><h3>Dry Gel Pedicure</h3><ul class="tags"><li>1 hr 10 min</li></ul></div><div class="price">£50</div></article><article class="item"><div class="item-main"><h3>Gel French Pedicure</h3><ul class="tags"><li>1 hr 50 min</li></ul></div><div class="price">£55</div></article><article class="item"><div class="item-main"><h3>Ladies Gel Pedicure with GEHWOL Products</h3><ul class="tags"><li>2 hr</li></ul></div><div class="price">£60</div></article><article class="item"><div class="item-main"><h3>Gel Pedicure for Dry and Cracked Heel</h3><ul class="tags"><li>2 hr 30 min</li></ul></div><div class="price">£80</div></article></div></section>
+<section class="cat" id="men"><header class="cat-head"><h2>Men</h2><p>Manicures and pedicures for men.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>Men Manicure</h3><p class="desc">Neat shaping, cuticle work and a clear or matte finish for well-kept hands.</p><ul class="tags"><li>Groomed hands</li><li>50 min</li></ul></div><div class="price">£25</div></article><article class="item"><div class="item-main"><h3>Men Pedicure with GEHWOL Products</h3><ul class="tags"><li>1 hr 30 min</li></ul></div><div class="price">£55</div></article><article class="item"><div class="item-main"><h3>Men Spa Pedicure</h3><ul class="tags"><li>1 hr</li></ul></div><div class="price">£55</div></article><article class="item"><div class="item-main"><h3>Men Spa Maintenance Pedicure (every 6 weeks)</h3><ul class="tags"><li>1 hr</li></ul></div><div class="price">£50</div></article><article class="item"><div class="item-main"><h3>Men Feet Condition Treatment with Paraffin</h3><ul class="tags"><li>2 hr</li></ul></div><div class="price">£75</div></article></div></section>
+<section class="cat" id="girls"><header class="cat-head"><h2>Girls 6–12</h2><p>Mini spa treatments for girls aged 6 to 12.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>Mini Spa Manicure</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£25</div></article><article class="item"><div class="item-main"><h3>Mini Spa Pedicure</h3><ul class="tags"><li>1 hr 5 min</li></ul></div><div class="price">£25</div></article></div></section>
+<section class="cat" id="hands-feet"><header class="cat-head"><h2>Hands &amp; Feet</h2><p>Manicure and pedicure in one visit.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>OPI Spa Manicure &amp; Pedicure</h3><ul class="tags"><li>2 hr 30 min</li></ul></div><div class="price">£70</div></article><article class="item"><div class="item-main"><h3>OPI Gel Spa Manicure &amp; Pedicure</h3><p class="desc">The full spa manicure and pedicure in one visit, both finished in OPI gel.</p><ul class="tags"><li>Hands &amp; feet</li><li>3 hr – 3 hr 30 min</li></ul><dl class="options"><div><dt>Manicure, pedicure · 3 hr</dt><dd>£86</dd></div><div><dt>Gel removal &amp; manicure, pedicure · 3 hr 20 min</dt><dd>£90</dd></div><div><dt>Manicure, gel removal &amp; pedicure · 3 hr 10 min</dt><dd>£90</dd></div></dl></div><div class="price">from £86</div></article></div></section>
+<section class="cat" id="extras"><header class="cat-head"><h2>Extras &amp; Removals</h2><p>Add to any nail treatment.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>Nail Art</h3><p class="desc">Hand-painted detail, added to any manicure.</p><ul class="tags"><li>Finishing touch</li><li>10 min</li></ul></div><div class="price">£8<small>per nail</small></div></article><article class="item"><div class="item-main"><h3>Glitter Polish Finish</h3><p class="desc">A glitter or shimmer layer over your polish. An add-on to any nail treatment.</p><ul class="tags"><li>Add-on</li></ul></div><div class="price">£15</div></article><article class="item"><div class="item-main"><h3>Gel Polish Removal</h3><ul class="tags"><li>20 min – 30 min</li></ul></div><div class="price">from £15</div></article><article class="item"><div class="item-main"><h3>SNS Removal</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£20</div></article></div></section>
+<section class="cat" id="lashes"><header class="cat-head"><h2>Lashes</h2></header><div class="cat-items"><article class="item"><div class="item-main"><h3>Lash Lift &amp; Tint</h3><ul class="tags"><li>1 hr 15 min</li></ul></div><div class="price">£60</div></article><article class="item"><div class="item-main"><h3>Lash Lift (no tint)</h3></div><div class="price">£50</div></article></div></section>
+<section class="cat" id="facials"><header class="cat-head"><h2>Facials</h2></header><div class="cat-items"><article class="item"><div class="item-main"><h3>PRX-T33 Facial</h3><p class="desc">A no-peel biorevitalising facial that brightens and firms with no downtime.</p><ul class="tags"><li>Tighten &amp; refine</li></ul></div><div class="price">£95</div></article><article class="item"><div class="item-main"><h3>Facial — Luxury</h3><ul class="tags"><li>1 hr</li></ul></div><div class="price">£100</div></article><article class="item"><div class="item-main"><h3>Facial — LED Light Therapy</h3><ul class="tags"><li>35 min</li></ul></div><div class="price">£35</div></article><article class="item"><div class="item-main"><h3>Facial — Men's</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£100</div></article><article class="item"><div class="item-main"><h3>Anti-Ageing Lift Facial</h3><p class="desc">A biomimetic peptide-based, stimulating anti-ageing treatment.</p><ul class="tags"><li>Lift</li><li>50 min – 1 hr 5 min</li></ul></div><div class="price">from £95</div></article><article class="item"><div class="item-main"><h3>Sensitive Skin Facial</h3><p class="desc">A soothing, nourishing treatment for sensitive skin prone to redness.</p><ul class="tags"><li>50 min – 1 hr 5 min</li></ul></div><div class="price">from £80</div></article><article class="item"><div class="item-main"><h3>Oxygenating Facial</h3><p class="desc">An oxygenating treatment for tired, stressed, photo-aged skin.</p><ul class="tags"><li>50 min – 1 hr 5 min</li></ul></div><div class="price">from £85</div></article></div></section>
+<section class="cat" id="aesthetics"><header class="cat-head"><h2>Aesthetics</h2><p>Start with a consultation to plan your protocol.</p></header><div class="cat-items"><article class="item"><div class="item-main"><h3>Anti-Wrinkle</h3><p class="desc">Precision-prescribed anti-wrinkle injections for a rested result that still looks like you.</p><ul class="tags"><li>Soften &amp; smooth</li><li>30 min</li></ul></div><div class="price">£190</div></article><article class="item"><div class="item-main"><h3>Facial (Profhilo)</h3><p class="desc">Injectable hyaluronic acid that remodels laxity and restores a natural, hydrated luminosity.</p><ul class="tags"><li>Hydrate &amp; lift</li><li>30 min</li></ul></div><div class="price">from £220</div></article><article class="item"><div class="item-main"><h3>Jalupro Under Eyes</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£190</div></article><article class="item"><div class="item-main"><h3>Jalupro HMW</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£190</div></article><article class="item"><div class="item-main"><h3>Sunekos</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£190</div></article><article class="item"><div class="item-main"><h3>Polynucleotide Under Eyes</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£190</div></article><article class="item"><div class="item-main"><h3>Profhilo (1 session)</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£240</div></article><article class="item"><div class="item-main"><h3>Vitamin B12</h3><ul class="tags"><li>20 min</li></ul></div><div class="price">£25</div></article><article class="item"><div class="item-main"><h3>Vitamin B Complex</h3><ul class="tags"><li>20 min</li></ul></div><div class="price">£25</div></article><article class="item"><div class="item-main"><h3>Vitamin D3</h3><ul class="tags"><li>20 min</li></ul></div><div class="price">£25</div></article><article class="item"><div class="item-main"><h3>Basic Anti-Wrinkle Injections</h3><ul class="tags"><li>1 hr</li></ul></div><div class="price">£190</div></article><article class="item"><div class="item-main"><h3>Seventy Hyal</h3><ul class="tags"><li>With consultation</li><li>45 min</li></ul></div><div class="price">£190</div></article><article class="item"><div class="item-main"><h3>Collagenex Skin Booster</h3><ul class="tags"><li>45 min</li></ul></div><div class="price">£190</div></article><article class="item"><div class="item-main"><h3>Collagenex Skin Booster: 3 Sessions</h3><p class="desc">A course of three sessions, spaced every 4 to 6 weeks.</p><ul class="tags"><li class="deal">November deal</li><li>3 sessions</li><li>Every 4–6 weeks</li></ul></div><div class="price">£450</div></article><article class="item"><div class="item-main"><h3>Hair Loss Treatment (PRP)</h3><p class="desc">A one-hour PRP treatment for hair loss.</p><ul class="tags"><li>1 hr</li></ul></div><div class="price">from £220</div></article></div></section>
+
+    <section class="reviews" aria-labelledby="reviews-title">
+      <p class="kicker">What clients say</p>
+      <h2 id="reviews-title">4.9 across Google, Treatwell and Facebook</h2>
+      <div class="quotes">
+        <figure><blockquote>“Recommend 100%, very good service and friendly atmosphere, plus weight loss.”</blockquote><figcaption>Google review</figcaption></figure>
+        <figure><blockquote>“She is very thorough and does amazing pedicures &amp; manicures.”</blockquote><figcaption>Google review</figcaption></figure>
+        <figure><blockquote>“Excellent choice of colours, quality products. Never chip or fade.”</blockquote><figcaption>Google review</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div>
+        <h2>Opening hours</h2>
+        <table class="hours" id="hours">
+          <tr data-day="1"><td>Monday</td><td>9:30 am – 6:30 pm</td></tr>
+          <tr data-day="2"><td>Tuesday</td><td>9:30 am – 6:30 pm</td></tr>
+          <tr data-day="3"><td>Wednesday</td><td>9:30 am – 6:30 pm</td></tr>
+          <tr data-day="4"><td>Thursday</td><td>9:30 am – 6:30 pm</td></tr>
+          <tr data-day="5"><td>Friday</td><td>9:30 am – 6:30 pm</td></tr>
+          <tr data-day="6"><td>Saturday</td><td>9 am – 4 pm</td></tr>
+          <tr data-day="0"><td>Sunday</td><td>Closed</td></tr>
+        </table>
+        <p class="small-note">If you want an earlier or later appointment, or a same-day appointment, please contact me.</p>
+      </div>
+      <div>
+        <h2>Find us</h2>
+        <address>Body Shape Hampton<br>9 Station Approach<br>Hampton TW12 2HY</address>
+        <div class="phone-row">
+          <span class="phone" id="phone">07450 877888</span>
+          <button class="btn small" type="button" id="copy">Copy number</button>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="tel:+447450877888">Call to book</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Body+Shape+9+Station+Approach+Hampton+TW12+2HY" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Body Shape · Beauty &amp; Aesthetics · Hampton</span>
+    <span>9 Station Approach, Hampton TW12 2HY</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Opening hours in minutes after midnight, by weekday (0 = Sunday), UK time.
+  var HOURS = { 0: null, 1: [570, 1110], 2: [570, 1110], 3: [570, 1110], 4: [570, 1110], 5: [570, 1110], 6: [540, 960] };
+  var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  function fmt(m) {
+    var h = Math.floor(m / 60), min = m % 60, ap = h >= 12 ? "pm" : "am";
+    h = h % 12 || 12;
+    return h + (min ? ":" + String(min).padStart(2, "0") : "") + " " + ap;
+  }
+  var day, mins;
+  try {
+    var parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).formatToParts(new Date());
+    var get = function (t) { return parts.find(function (p) { return p.type === t; }).value; };
+    day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(get("weekday"));
+    mins = parseInt(get("hour"), 10) * 60 + parseInt(get("minute"), 10);
+  } catch (e) {
+    var d = new Date(); day = d.getDay(); mins = d.getHours() * 60 + d.getMinutes();
+  }
+  var row = document.querySelector('#hours tr[data-day="' + day + '"]');
+  if (row) row.classList.add("today");
+
+  var status = document.getElementById("status"), today = HOURS[day];
+  if (today && mins >= today[0] && mins < today[1]) {
+    status.textContent = "Open now · closes " + fmt(today[1]);
+    status.classList.add("open");
+  } else {
+    var text;
+    if (today && mins < today[0]) text = "opens " + fmt(today[0]) + " today";
+    else {
+      for (var i = 1; i <= 7; i++) {
+        var nd = (day + i) % 7;
+        if (HOURS[nd]) { text = "opens " + fmt(HOURS[nd][0]) + (i === 1 ? " tomorrow" : " " + DAYS[nd]); break; }
+      }
+    }
+    status.textContent = "Closed · " + text;
+  }
+
+  var btn = document.getElementById("copy");
+  btn.addEventListener("click", function () {
+    var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy number"; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById("phone"));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = "Selected";
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText("07450877888").then(done, fallback);
+    else fallback();
+  });
+})();
+</script>
+</body>
+</html>
